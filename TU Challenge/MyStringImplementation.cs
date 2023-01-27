@@ -71,13 +71,16 @@ namespace TU_Challenge
         public static string UnBazardString(string input)
         {
             string result = "";
-            string end = input.Substring(input.Length / 2);
-
+            string end = "";
+            string start = "";
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (i < input.Length / 2) start += input[i];
+                else end += input[i];
+            }
             for (int i = 0; i < input.Length / 2; i++)
             {
-                if (i % 2 == 0)
-                    result += input[i];
-
+                result += start[i];
                 result += end[i];
             }
 
