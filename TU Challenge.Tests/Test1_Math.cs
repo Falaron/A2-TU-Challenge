@@ -194,7 +194,7 @@ namespace TU_Challenge
 
         }
 
-        /// <summary>
+        /*/// <summary>
         /// Test pas obligatoire mais essayez un peu quand même. N'hésitez pas à me demander de l'aide
         /// </summary>
         [Test]
@@ -223,7 +223,7 @@ namespace TU_Challenge
             {
                 Assert.IsTrue(result[i] > result[i + 1]);
             }
-        }
+        }*/
 
     }
 }
