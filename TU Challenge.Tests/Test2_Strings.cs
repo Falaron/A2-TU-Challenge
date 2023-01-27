@@ -71,7 +71,7 @@ namespace TU_Challenge.Tests
             Assert.That(result, Is.EqualTo(expected));
         }
 
-        /*[Test]
+        [Test]
         [TestCase("IIM", "MII")]
         [TestCase("HelloWorld", "dlroWolleH")]
         public void Reverse(string a, string expected)
@@ -96,7 +96,7 @@ namespace TU_Challenge.Tests
             Assert.That(result, Is.EqualTo(expected));
         }
 
-        /// <summary>
+        /*/// <summary>
         /// Bonus, non obligatoire pour aujourd'hui, pour comprendre le code de césar : 
         /// https://fr.wikipedia.org/wiki/Chiffrement_par_d%C3%A9calage
         /// https://www.dcode.fr/chiffre-cesar

@@ -8,6 +8,23 @@ namespace TU_Challenge
 {
     public class MyStringImplementation
     {
+        public static string BazardString(string input)
+        {
+            string result = "";
+            string end = "";
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (i % 2 == 0)
+                    result += input[i];
+                else
+                    end += input[i];
+            }
+            result += end;
+
+            return result;
+        }
+
         public static bool IsNullEmptyOrWhiteSpace(string input)
         {
             return string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input);
@@ -28,10 +45,17 @@ namespace TU_Challenge
             return result;
         }
 
+        public static string Reverse(string a)
+        {
+            char[] charArray = a.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
         public static string ToLowerCase(string a)
         {
             string result = "";
-            for(int i = 0; i < a.Length; i++)
+            for (int i = 0; i < a.Length; i++)
             {
                 if (a[i] >= 'A' && a[i] <= 'Z')
                 {
@@ -44,18 +68,34 @@ namespace TU_Challenge
             return result;
         }
 
+        public static string UnBazardString(string input)
+        {
+            string result = "";
+            string end = input.Substring(input.Length / 2);
+
+            for (int i = 0; i < input.Length / 2; i++)
+            {
+                if (i % 2 == 0)
+                    result += input[i];
+
+                result += end[i];
+            }
+
+            return result;
+        }
+
         public static string Voyelles(string a)
         {
             string voy = "";
-            string list = "aeiouy";
+            string list = "aeiouyAEIOUY";
 
             for (int i = 0; i < a.Length; i++)
             {
-                foreach(char c in list)
+                foreach (char c in list)
                 {
-                    if (a[i].ToString() == ToLowerCase(c.ToString()))
+                    if (a[i] == c && !voy.Contains(a[i]))
                     {
-                        voy += a[i];
+                        voy += ToLowerCase(c.ToString());
                     }
                 }
             }
