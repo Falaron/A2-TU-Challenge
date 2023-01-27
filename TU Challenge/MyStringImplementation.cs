@@ -47,9 +47,12 @@ namespace TU_Challenge
 
         public static string Reverse(string a)
         {
-            char[] charArray = a.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
+            string result = "";
+            for (int i = a.Length; i > 0; i--)
+            {
+                result += a[i - 1];
+            }
+            return result;
         }
 
         public static string ToLowerCase(string a)
